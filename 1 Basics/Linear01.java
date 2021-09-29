@@ -3,7 +3,7 @@ package by.home.basics;
 import java.util.Scanner;
 
 /*
- * Найдите значение функции: z = ( (a – 3) * b / 2) + c.
+ * РќР°Р№РґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ С„СѓРЅРєС†РёРё: z = ( (a вЂ“ 3) * b / 2) + c
  */
 
 public class Linear01 {
@@ -23,7 +23,7 @@ public class Linear01 {
 		c = sc.nextDouble();
 		
 		z = ( (a - 3.0) * b / 2.0) + c;
-		System.out.println("The result of \"z = ( (a – 3) * b / 2) + c\" is " + z);
+		System.out.println("The result of \"z = ( (a вЂ“ 3) * b / 2) + c\" is " + z);
 		
 		sc.close();
 	}
