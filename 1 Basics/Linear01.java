@@ -3,6 +3,8 @@ package by.home.basics;
 import java.util.Scanner;
 
 /*
+ * Раздел "Линейные программы".
+ * Задача №1.
  * Найдите значение функции: z = ( (a – 3) * b / 2) + c
  */
 
