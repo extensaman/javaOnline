@@ -29,5 +29,4 @@ public class Linear01 {
 		
 		sc.close();
 	}
-
 }
