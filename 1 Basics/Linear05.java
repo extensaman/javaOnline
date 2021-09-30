@@ -11,10 +11,12 @@ public class Linear05 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		long t = 2_000_000_000_000L;
-		long hours = t / 3600;
-		int minutes = (int) (t%3600) / 60;
-		int seconds = (int) (t%60);
-		System.out.println("T=" + t + " seconds." + '\n' + "equals" + '\n' + hours + " hours" + '\n' + minutes + " minutes" + '\n' + seconds + " seconds");
+		long t = 5_000_000_000_001L;
+		System.out.println("T=" + t + " seconds equals");
+		byte seconds = (byte) (t%60);
+		t/=60;
+		byte minutes = (byte) (t%60);
+		long hours = t/60;
+		System.out.println(hours + " hours" + '\n' + minutes + " minutes" + '\n' + seconds + " seconds");
 	}
 }
