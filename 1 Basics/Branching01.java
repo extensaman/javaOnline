@@ -16,7 +16,7 @@ public class Branching01 {
 			System.out.print("Triangle with angle #1 = " +
 									angle01 + " degrees and angle #2 = " +
 									angle02 + " degrees EXISTS");
-			if (angle01 == 90 || angle02 == 90 || 180 - angle01 - angle02 == 90) {
+			if (angle01 == 90 || angle02 == 90 || angle01 + angle02 == 90) {
 				System.out.println(" and it's rectangular");
 			}
 		}
