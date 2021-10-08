@@ -16,7 +16,7 @@ public class OneDimensionalArrays01 {
 		
 		// Filling an array
 		for (int i = 0; i < n; i++) {
-			a[i] = (int)(Math.random() * 100) + 1;
+			a[i] = (int)(Math.random() * 100.0) + 1;
 			System.out.println("a[" + i + "]=" + a[i]);
 		}
 
