@@ -77,8 +77,7 @@ public class OneDimensionalArrays09 {
 		}
 		
 		// Print results
-		int result = a[indexMaximum];
-		System.out.println("\nMost freaquently is " + result + " (counts = " + (b[indexMaximum] + 1) + ")");
+		System.out.println("\nMost freaquently is " + a[indexMaximum] + " (counts = " + (b[indexMaximum] + 1) + ")");
 	}
 
 }
