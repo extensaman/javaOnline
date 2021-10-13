@@ -28,7 +28,7 @@ public class MultiDimensionalArrays07 {
 				
 				a[i][j] = Math.sin	( 
 								( 
-									Math.pow((i + 1), 2.0) - Math.pow((j + 1), 2.0) 
+									Math.pow(i + 1, 2.0) - Math.pow(j + 1, 2.0) 
 								) / m 
 							);
 				// Count amount of positive elements
