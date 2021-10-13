@@ -27,10 +27,10 @@ public class MultiDimensionalArrays07 {
 			for (int j = 0; j < a[i].length; j++) {
 				
 				a[i][j] = Math.sin	( 
-										( 
-											Math.pow((i + 1), 2.0) - Math.pow((j + 1), 2.0) 
-										) / m 
-									);
+								( 
+									Math.pow((i + 1), 2.0) - Math.pow((j + 1), 2.0) 
+								) / m 
+							);
 				// Count amount of positive elements
 				if (a[i][j] > 0.0) {
 					counter++;
