@@ -51,6 +51,16 @@ public class MultiDimensionalArrays12 {
 	
 	public static void sortArray(int[] a, int order) {
 		
+		if (a == null) {
+			System.out.println("Bad array reference.");
+			return;
+		}
+		
+		if (Math.abs(order) != 1) {
+			System.out.println("Bad parameter \'order\'.");
+			return;
+		}	
+		
 		boolean isNotSorted = true;
 		
 		while (isNotSorted) {
