@@ -15,7 +15,7 @@ public class MultiDimensionalArrays15 {
 		int m; // Number of rows
 		m = (int) (Math.random() * 8.0) + 2;
 		int n; // Number of columns
-		n = (int) (Math.random() * 8.0) + 2;
+		n = (int) (Math.random() * 8.0) + 1;
 
 		// Create an array
 		int[][] a = new int[m][n];
