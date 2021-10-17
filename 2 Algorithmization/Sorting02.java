@@ -1,7 +1,5 @@
 package by.home.algorithmization;
 
-import java.util.Arrays;
-
 /*
 * Этап "Алгоритмизация"
 * Раздел "Сортировка".
