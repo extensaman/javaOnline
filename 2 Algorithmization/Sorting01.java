@@ -7,7 +7,8 @@ import java.util.Scanner;
 * Раздел "Сортировка".
 * Задача №1.
 * Заданы два одномерных массива с различным количеством элементов и натуральное число k. 
-* Объединить их в один массив, включив второй массив между k-м и (k+1) - м элементами первого
+* Объединить их в один массив, включив второй массив между k-м и (k+1) - м элементами первого 
+* при этом не используя дополнительный массив.
 */
 
 public class Sorting01 {
@@ -43,21 +44,25 @@ public class Sorting01 {
 		System.out.println("\nArray \'b\' (length =" + n + ") is");
 		printArray(b);
 		
-		int k; //  Place for put
+		int k; //  Place for insert
 		do {
 			k = inputInt("Enter \'k\' (1 <= # <=" + m + "):");
 		} while (k < 1 || k > m);
 		
+		// Move (m - k) elements of 'a'-array to its end
 		int i;
 		int counts;
 		for (i = a.length - 1, counts = m - k; counts > 0; i--, counts--) {
 
 			a[i] = a[i - n];
 		}
+		
+		// Insert all 'b'-array's elements after k-element of 'a'-array
 		for (i = k; i < k + b.length; i++) {
 			a[i] = b[i - k];
 		}
 		
+		// Print results
 		System.out.println("Resulting array is");
 		printArray(a);
 	}
