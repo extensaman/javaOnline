@@ -1,4 +1,4 @@
-﻿package by.home.basics;
+﻿package by.home.basic.cycle;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Cycles01 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
 		Scanner sc = new Scanner (System.in);
 		
 		System.out.println("Enter a positive integer: ");
@@ -28,7 +28,6 @@ public class Cycles01 {
 		else {
 			System.out.println("Program stopped because you had entered the wrong number.");
 		}
-		sc.close();
 	}
 
 }
