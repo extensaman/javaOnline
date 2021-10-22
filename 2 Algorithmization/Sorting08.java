@@ -41,37 +41,39 @@ public class Sorting08 {
 		}
 		
 		System.out.println("\n\nCalculations...");
-		// Calculate general greatest common factor (GGCF) **Общий НОД** of all denominators
-		// result will be in nod[n - 1]
+
+		// Вычисляем НОК всех знаменателей дробей 
 		int nod = 0;
 		int nok = 1;
 		int previousNok = q[0];
 				
-		for (int i = 0; i < n - 1; i++) {
+		for (int i = 0; i < n - 1; i++) { // цикл по всем массивам массивов простых множителей
 			
-			for (int j = 0; arrayPrimeMultiplier[i][j] != 0; j++) {
+			for (int j = 0; arrayPrimeMultiplier[i][j] != 0; j++) { // берем один из массивов простых множителей, обозначим его как "1"
 				
 				boolean primeFounded = false;
 				
-				for (int k = 0; arrayPrimeMultiplier[i+1][k] != 0; k++) {
+				for (int k = 0; arrayPrimeMultiplier[i+1][k] != 0; k++) { // и ищем одинаковые цифры в следующем массиве простых множителей, обозначим его как "2"
 					
-					if (arrayPrimeMultiplier[i][j] == arrayPrimeMultiplier[i+1][k]) {
+					if (arrayPrimeMultiplier[i][j] == arrayPrimeMultiplier[i+1][k]) { 
 						
-						arrayPrimeMultiplier[i+1][k] = 1;
+						arrayPrimeMultiplier[i+1][k] = 1; // если нашлась одинаковая цифра, то в "2" ее "убираем" (присваиваем 1)
 						primeFounded = true;
-						break;
+						break;							// и переходим к следующей цифре в "1", тем самым оставляя найденную общую цифру в "1"
 					}
 				}
 				
-				if (!primeFounded) {
-					arrayPrimeMultiplier[i][j] = 1;
+				if (!primeFounded) {				// если нет такой цифры в "2"
+					arrayPrimeMultiplier[i][j] = 1; // то "убираем" ее из "1" (присваиваем 1)
 				}
 			}
 			
-			nod = calcNod(arrayPrimeMultiplier[i]);
-			nok = previousNok * q[i + 1] / nod;
-			System.out.print("\nnod is " + nod + " nok is " + nok + ")");
-			arrayPrimeMultiplier[i+1] = separateToPrimeMultiplier(nok);
+			// в результате общие простые останутся в массиве "1"   
+			
+			nod = calcNod(arrayPrimeMultiplier[i]); // перемножив их получим НОД этих двух чисел (разложенных ранее на простые множители)
+			nok = previousNok * q[i + 1] / nod;  // переводим НОД в НОК по известной формуле 
+			System.out.print("\n\'" + previousNok + "\' and \'" + q[i + 1]  + "\' : NOD is " + nod + " NOK is " + nok); // служебная печать (для контроля)
+			arrayPrimeMultiplier[i+1] = separateToPrimeMultiplier(nok); // и раскладываем этот НОК на простые множители и пишем в массив "2", который на следующей итерации 'i' станет "1"
 			previousNok = nok;
 		}
 
@@ -86,9 +88,22 @@ public class Sorting08 {
 		// Print generated fractions
 		System.out.println("\nFractions with common denominator are");
 		printFraction(p, q);
+		
+		// Sort fractions
+		sortArray(p);
+		
+		// Print result
+		System.out.println("\nSorted fractions with common denominator are");
+		printFraction(p, q);
+		
 	}
 
 	public static int[] separateToPrimeMultiplier(int q) {
+		
+		if (q < 1) {
+			System.out.println("Bad input parameter \'q\' in \'int[] separateToPrimeMultiplier(int q)\'.");
+			System.exit(0);
+		}
 		
 		int[] elementPrimeMultiplier = new int[MAX_COUNT_OF_PRIME];
 		
@@ -146,7 +161,7 @@ public class Sorting08 {
 	public static void printArray(int[] a) {
 		
 		if (a == null) {
-			System.out.println("Bad parameters for print.");
+			System.out.println("Bad parameter for print.");
 			return;
 		}
 		
@@ -171,5 +186,36 @@ public class Sorting08 {
 		}
 		
 		return nod;
+	}
+	
+	public static void sortArray (int[] a) {
+		
+		if (a == null) {
+			System.out.println("Bad parameter for sort.");
+			return;
+		}
+		
+		boolean isNotSorted = true;
+		int countOfSortedElement = 0;
+		
+		while (isNotSorted) {
+			
+			isNotSorted = false;
+			
+			for (int i = 0; i < a.length - 1 - countOfSortedElement; i++) {
+				
+				if (a[i] > a[i+1]) {
+					
+					int temp = a[i];
+					a[i] = a[i+1];
+					a[i + 1] = temp;
+					
+					isNotSorted = true;
+				}
+			}
+			
+			countOfSortedElement++;
+		}
+		
 	}
 }
