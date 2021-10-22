@@ -1,4 +1,4 @@
-﻿package by.home.basics;
+﻿package by.home.basic.cycle;
 
 /*
  * Раздел "Циклы".
@@ -9,7 +9,7 @@
 public class Cycles02 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		double a = -3.5;
 		double b = 9.0;
 		double h = 0.5;
