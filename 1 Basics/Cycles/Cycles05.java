@@ -1,4 +1,4 @@
-﻿package by.home.basics;
+package by.home.basic.cycle;
 
 import java.util.Scanner;
 
@@ -12,8 +12,7 @@ import java.util.Scanner;
 public class Cycles05 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
 		System.out.println("Enter a real number \'e\': ");
 		Scanner sc = new Scanner(System.in);
 
@@ -38,8 +37,7 @@ public class Cycles05 {
 			}
 		}
 		System.out.println("The result of calculation is " + sum);
-		
-		sc.close();
+
 	}
 		
 }
