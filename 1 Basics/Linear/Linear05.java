@@ -1,4 +1,4 @@
-﻿package by.home.basics;
+package by.home.basic.linear;
 
 /*
  * Раздел "Линейные программы".
@@ -10,13 +10,18 @@
 public class Linear05 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		long t = 5_000_000_000_001L;
 		System.out.println("T=" + t + " seconds equals");
-		byte seconds = (byte) (t%60);
-		t/=60;
-		byte minutes = (byte) (t%60);
-		long hours = t/60;
+		
+		byte seconds = (byte) (t % 60);
+		
+		t /= 60;
+		
+		byte minutes = (byte) (t % 60);
+		
+		long hours = t / 60;
+		
 		System.out.println(hours + " hours" + '\n' + minutes + " minutes" + '\n' + seconds + " seconds");
 	}
 }
