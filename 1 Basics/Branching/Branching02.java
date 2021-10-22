@@ -1,4 +1,4 @@
-﻿package by.home.basics;
+﻿package by.home.basic.branching;
 
 /*
  * Раздел "Ветвления".
