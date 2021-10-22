@@ -1,4 +1,4 @@
-﻿package by.home.basics;
+package by.home.basic.cycle;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Cycles07 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		Scanner sc = new Scanner (System.in);
 		int m = 0;
 		int n = 0;
@@ -20,8 +20,8 @@ public class Cycles07 {
 		System.out.println("Enter positive integers \'m\' and \'n\': ");
 		if (sc.hasNextInt() && (m = sc.nextInt()) > 0 && sc.hasNextInt() && (n = sc.nextInt()) > 0) {
 			for (int i = m; i <= n; i++) {
-				for (int j = 2; j <= i/2; j++) {
-					if (i%j == 0) {
+				for (int j = 2; j <= i / 2; j++) {
+					if (i % j == 0) {
 						System.out.println("Integer \'" + i + "\' has the divider " + j);
 					}
 				}
@@ -29,7 +29,6 @@ public class Cycles07 {
 		} else {
 			System.out.println("Program stoped because you had entered wrong data");
 		}
-		sc.close();
 	}
 
 }
