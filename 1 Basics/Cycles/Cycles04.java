@@ -1,4 +1,4 @@
-package by.home.basic;
+package by.home.basic.cycle;
 
 //import java.math.BigInteger;
 
