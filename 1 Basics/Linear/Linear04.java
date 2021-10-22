@@ -1,4 +1,4 @@
-﻿package by.home.basics;
+package by.home.basic.linear;
 
 /*
  * Раздел "Линейные программы".
@@ -10,10 +10,13 @@
 public class Linear04 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		double r = 999.888;
+		
 		int temp = (int) r;
-		double result = r*1000.0 - temp*1000.0 + temp/1000.0;
+		
+		double result = r * 1000.0 - temp * 1000.0 + temp / 1000.0;
+		
 		System.out.println("\"R\"=" + r + '\n' + "The result is " + result);
 	}
 
