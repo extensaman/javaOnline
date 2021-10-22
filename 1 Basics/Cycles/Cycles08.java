@@ -1,4 +1,4 @@
-﻿package by.home.basics;
+package by.home.basic.cycle;
 
 /*
  * Раздел "Циклы".
