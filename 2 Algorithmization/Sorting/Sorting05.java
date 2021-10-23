@@ -1,8 +1,8 @@
-package by.home.algorithmization;
+package by.home.algorithmization.sorting;
 
 /*
 * Этап "Алгоритмизация"
-* Раздел "Сортировка".
+* Раздел "Сортировки".
 * Задача №5.
 * Cортировка вставками. 
 * Дана последовательность чисел a1, a2 .. an. 
@@ -27,6 +27,7 @@ public class Sorting05 {
 		
 		// Generate elements
 		for (int i = 0; i < n; i++) {
+			
 			notSortedArray[i] = (int) (Math.random() * 100.0) - 50;
 		}
 		
@@ -37,15 +38,19 @@ public class Sorting05 {
 		
 		// Make sorted array 'a' from first and second elements of original array
 		if (notSortedArray[0] < notSortedArray[1]) {
+			
 			a[0] = notSortedArray[0];
 			a[1] = notSortedArray[1];
+			
 		} else {
+			
 			a[0] = notSortedArray[1];
 			a[1] = notSortedArray[0];
 		}
 		
 		// Sorting
 		int lastIndexA = 1;
+		
 		for (int i = 2; i < n; i++) {
 			
 			// Determine index number for insert
@@ -53,10 +58,13 @@ public class Sorting05 {
 			
 			// Move to the right elements that are situated after 'insert'-position
 			for (int j = lastIndexA + 1, moveCount = lastIndexA - insertIndex; moveCount >= 0; moveCount--, j--) {
+				
 				a[j] = a[j - 1];
 			}
+			
 			// Insert new element
 			a[insertIndex] = notSortedArray[i];
+			
 			lastIndexA++;
 		}
 		
@@ -72,12 +80,19 @@ public class Sorting05 {
 		if (size <= 2) {
 			
 			if (newElement < a[beginIndex]) {
+				
 				return beginIndex;
+				
 			} else {
+				
 				if (newElement > a[endIndex]) {
+					
 					return endIndex + 1;
+					
 				} else {
+					
 					return endIndex; 
+					
 				}
 			}
 		}
@@ -85,8 +100,11 @@ public class Sorting05 {
 		int currentIndex = beginIndex + size / 2;
 		
 		if (newElement < a[currentIndex]) {
+			
 			return binarySearch(a, beginIndex, currentIndex, newElement);
+			
 		} else {
+			
 			return binarySearch(a, currentIndex, endIndex, newElement);
 		}
 		
@@ -95,6 +113,7 @@ public class Sorting05 {
 	public static void printArray (int[] a) {
 		
 		for (int element: a) {
+			
 			System.out.printf("%+5d", element);
 		}
 	}
