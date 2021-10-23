@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.sorting;
 
 import java.util.Arrays;
 
@@ -25,6 +25,7 @@ public class Sorting04 {
 		
 		// Generate array's elements
 		for (int i = 0; i < n; i++) {
+			
 			a[i] = (int) (Math.random() * 20.0) - 10;
 		}
 		
@@ -63,6 +64,7 @@ public class Sorting04 {
 		
 		System.out.println("\nSorted array is");
 		printArray(a);
+		
 		System.out.println("\nCount of replacements = " + swapCount);
 		
 	}
@@ -70,6 +72,7 @@ public class Sorting04 {
 	public static void printArray(int[] a) {
 		
 		for (int element : a) {
+			
 			System.out.printf("%+6d", element);
 		}
 	}
