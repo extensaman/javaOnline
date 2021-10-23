@@ -1,10 +1,10 @@
-package by.home.algorithmization;
+package by.home.algorithmization.sorting;
 
 import java.util.Scanner;
 
 /*
 * Этап "Алгоритмизация"
-* Раздел "Сортировка".
+* Раздел "Сортировки".
 * Задача №1.
 * Заданы два одномерных массива с различным количеством элементов и натуральное число k. 
 * Объединить их в один массив, включив второй массив между k-м и (k+1) - м элементами первого 
@@ -19,8 +19,10 @@ public class Sorting01 {
 		m = (int) (Math.random() * 5.0) + 2;
 		
 		int n; // dimension of array 'b'
+		
 		do {
 			n = (int) (Math.random() * 5.0) + 2;
+			
 		} while (m == n);
 		
 		int[] a = new int[m + n]; // allocate cells for 'b' array
@@ -28,16 +30,20 @@ public class Sorting01 {
 		
 		// Generate elements for arrays 'a' and 'b'
 		for (int i = 0; i < m; i++) {
+			
 			a[i] = (int) (Math.random() * 30.0) - 15;
 		}
 		
 		for(int i = 0 ; i < n; i++) {
+			
 			b[i] = (int) (Math.random() * 30.0) -15;
 		}
 		
 		// Print arrays 'a' and 'b'
 		System.out.println("Array \'a\' (length =" + m + ") is");
+		
 		for (int i = 0; i < m; i++) {
+			
 			System.out.printf("%+4d", a[i]);
 		}
 		
@@ -47,11 +53,13 @@ public class Sorting01 {
 		int k; //  Place for insert
 		do {
 			k = inputInt("Enter \'k\' (1 <= # <=" + m + "):");
+			
 		} while (k < 1 || k > m);
 		
 		// Move (m - k) elements of 'a'-array to its end
 		int i;
 		int counts;
+		
 		for (i = a.length - 1, counts = m - k; counts > 0; i--, counts--) {
 
 			a[i] = a[i - n];
@@ -59,6 +67,7 @@ public class Sorting01 {
 		
 		// Insert all 'b'-array's elements after k-element of 'a'-array
 		for (i = k; i < k + b.length; i++) {
+			
 			a[i] = b[i - k];
 		}
 		
@@ -75,6 +84,7 @@ public class Sorting01 {
 		System.out.println(message);
 		
 		while (!sc.hasNextInt()) {
+			
 			sc.nextLine();
 			System.out.println ("You enetered wrong data. Try again.\n" + message);
 		}
@@ -85,13 +95,16 @@ public class Sorting01 {
 	public static void printArray (int[] mas) {
 		
 		if (mas == null) {
+			
 			System.out.println("Bad array reference.");
 			return;
 		}
 		
 		for (int i : mas) {
+			
 			System.out.printf("%+4d", i);
 		}
+		
 		System.out.println();
 	}
 }
