@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.sorting;
 
 /*
 * Этап "Алгоритмизация"
@@ -22,6 +22,7 @@ public class Sorting06 {
 		
 		// Generate elements
 		for (int i = 0; i < n; i++) {
+			
 			a[i] = (Math.random() * 100.0) - 50.0;
 		}
 		
@@ -60,6 +61,7 @@ public class Sorting06 {
 	public static void printArray (double[] a) {
 		
 		for (double element: a) {
+			
 			System.out.printf("%+6.1f", element);
 		}
 	}
