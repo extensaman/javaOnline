@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.multidimensionalarray;
 
 /*
 * Этап "Алгоритмизация"
@@ -20,7 +20,9 @@ public class MultiDimensionalArrays13 {
 
 		// Generate array elements
 		for (int i = 0; i < m; i++) {
+			
 			for (int j = 0; j < n; j++) {
+				
 				a[i][j] = (int) (Math.random() * 10.0) - 5;
 			}
 		}
@@ -62,20 +64,25 @@ public class MultiDimensionalArrays13 {
 		for (int j = 0; j < a[0].length; j++) {
 			
 			boolean isNotSorted = true;
+			int sortedCount = 0;
 
 			while (isNotSorted) {
 			
 				isNotSorted = false;
 			
-				for (int i = 0; i < a.length - 1; i++) {
+				for (int i = 0; i < a.length - 1 - sortedCount; i++) {
 				
 					if (a[i][j] * order > a[i+1][j] * order) {
+						
 						int temp = a[i][j];
 						a[i][j] = a[i+1][j];
 						a[i+1][j] = temp;
+						
 						isNotSorted = true;
 					}
 				}
+				
+				sortedCount++;
 			}
 		}
 	}
