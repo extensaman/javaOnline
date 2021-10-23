@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.multidimensionalarray;
 
 /*
 * Этап "Алгоритмизация"
@@ -20,7 +20,9 @@ public class MultiDimensionalArrays12 {
 
 		// Generate array elements
 		for (int i = 0; i < m; i++) {
+			
 			for (int j = 0; j < n; j++) {
+				
 				a[i][j] = (int) (Math.random() * 10.0) - 5;
 			}
 		}
@@ -31,6 +33,7 @@ public class MultiDimensionalArrays12 {
 		
 		// Sort the array (ASC)
 		for (int i = 0; i < a.length; i++) {
+			
 			sortArray(a[i], 1);
 		}
 		
@@ -40,6 +43,7 @@ public class MultiDimensionalArrays12 {
 		
 		// Sort the array (DESC)
 		for (int i = 0; i < a.length; i++) {
+			
 			sortArray(a[i], -1);
 		}
 		
@@ -52,44 +56,56 @@ public class MultiDimensionalArrays12 {
 	public static void sortArray(int[] a, int order) {
 		
 		if (a == null) {
+			
 			System.out.println("Bad array reference.");
 			return;
 		}
 		
 		if (Math.abs(order) != 1) {
+			
 			System.out.println("Bad parameter \'order\'.");
 			return;
 		}	
 		
 		boolean isNotSorted = true;
+		int sortedCount = 0;
 		
 		while (isNotSorted) {
 			
 			isNotSorted = false;
 			
-			for (int i = 0; i < a.length - 1; i++) {
+			for (int i = 0; i < a.length - 1 - sortedCount; i++) {
 				
 				if (a[i] * order > a[i+1] * order) {
+					
 					int temp = a[i];
 					a[i] = a[i+1];
 					a[i+1] = temp;
+					
 					isNotSorted = true;
 				}
 			}
+			
+			sortedCount++;
 		}
 		
 	}
+	
 	public static void printArray (int[][] mas) {
 		
 		if (mas == null) {
+			
 			System.out.println("Bad array reference.");
 			return;
 		}
 		
 		for (int i = 0; i < mas.length; i++) {
+			
 			for (int j = 0; j < mas[i].length; j++) {
+				
 				System.out.printf("%4d", mas[i][j]);
 			}
+			
 			System.out.println();
 		}
 	}
