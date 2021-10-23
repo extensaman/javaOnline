@@ -1,8 +1,8 @@
-package by.home.algorithmization;
+package by.home.algorithmization.sorting;
 
 /*
 * Этап "Алгоритмизация"
-* Раздел "Сортировка".
+* Раздел "Сортировки".
 * Задача №8.
 * Даны дроби p1/q1, p2/q2, ... , pn/qn (pi, qi - натуральные). 
 * Составить программу, которая приводит эти дроби к общему знаменателю и 
@@ -23,6 +23,7 @@ public class Sorting08 {
 		
 		// Initialization of arrays
 		for (int i = 0; i < n; i++) {
+			
 			p[i] = (int) (Math.random() * 8.0) + 1;
 			q[i] = (int) (Math.random() * 8.0) + 1;
 		}
@@ -37,6 +38,7 @@ public class Sorting08 {
 		
 		System.out.print("\n\nSeparate each denominator ('q'-element) to prime multipliers:");
 		for (int i = 0; i < n; i++) {
+			
 			arrayPrimeMultiplier[i] = separateToPrimeMultiplier(q[i]);
 		}
 		
@@ -59,11 +61,12 @@ public class Sorting08 {
 						
 						arrayPrimeMultiplier[i+1][k] = 1; // если нашлась одинаковая цифра, то в "2" ее "убираем" (присваиваем 1)
 						primeFounded = true;
-						break;							// и переходим к следующей цифре в "1", тем самым оставляя найденную общую цифру в "1"
+						break;				// и переходим к следующей цифре в "1", тем самым оставляя найденную общую цифру в "1"
 					}
 				}
 				
 				if (!primeFounded) {				// если нет такой цифры в "2"
+					
 					arrayPrimeMultiplier[i][j] = 1; // то "убираем" ее из "1" (присваиваем 1)
 				}
 			}
@@ -71,9 +74,13 @@ public class Sorting08 {
 			// в результате общие простые останутся в массиве "1"   
 			
 			nod = calcNod(arrayPrimeMultiplier[i]); // перемножив их получим НОД этих двух чисел (разложенных ранее на простые множители)
+			
 			nok = previousNok * q[i + 1] / nod;  // переводим НОД в НОК по известной формуле 
+			
 			System.out.print("\n\'" + previousNok + "\' and \'" + q[i + 1]  + "\' : NOD is " + nod + " NOK is " + nok); // служебная печать (для контроля)
+			
 			arrayPrimeMultiplier[i+1] = separateToPrimeMultiplier(nok); // и раскладываем этот НОК на простые множители и пишем в массив "2", который на следующей итерации 'i' станет "1"
+			
 			previousNok = nok;
 		}
 
@@ -81,6 +88,7 @@ public class Sorting08 {
 		
 		// Reduce fractions to a common denominator
 		for (int i = 0; i < n; i++) {
+			
 			p[i] *= nok / q[i];
 			q[i] = (int) nok;
 		}
@@ -101,6 +109,7 @@ public class Sorting08 {
 	public static int[] separateToPrimeMultiplier(int q) {
 		
 		if (q < 1) {
+			
 			System.out.println("Bad input parameter \'q\' in \'int[] separateToPrimeMultiplier(int q)\'.");
 			System.exit(0);
 		}
@@ -113,7 +122,9 @@ public class Sorting08 {
 		
 		do {
 			for (int i = 2; i <= q; i++) {
+				
 				if (q % i == 0) {
+					
 					elementPrimeMultiplier[index++] = i;
 					q /= i;
 					break;
@@ -123,6 +134,7 @@ public class Sorting08 {
 		
 		
 		if (index == MAX_COUNT_OF_PRIME) {
+			
 			System.out.println("\nToo big number. Result is wrong.");
 			return elementPrimeMultiplier;
 		}
@@ -137,23 +149,27 @@ public class Sorting08 {
 	public static void  printFraction (int[] p, int[] q) {
 		
 		if (p == null || q == null || p.length != q.length) {
+			
 			System.out.println("Bad parameters for print.");
 			return;
 		}
 		
 		for (int i = 0; i < p.length; i++) {
+			
 			System.out.printf("%8d", p[i]);
 		}
 		
 		System.out.println();
 		
 		for (int i = 0; i < p.length; i++) {
+			
 			System.out.printf("%4c%4c", ' ', '-');
 		}
 		
 		System.out.println();
 
 		for (int i = 0; i < q.length; i++) {
+			
 			System.out.printf("%8d", q[i]);
 		}
 	}
@@ -161,14 +177,17 @@ public class Sorting08 {
 	public static void printArray(int[] a) {
 		
 		if (a == null) {
+			
 			System.out.println("Bad parameter for print.");
 			return;
 		}
 		
 		for (int element : a) {
+			
 			if (element == 0) {
 				break;
 			}
+			
 			System.out.printf("%8d", element);
 		}
 	}
@@ -176,12 +195,14 @@ public class Sorting08 {
 	public static int calcNod (int[] prime) {
 		
 		if (prime == null) {
+			
 			System.out.println("Bad input parameter in \'int calcNod(int[] mas)\'.");
 			System.exit(0);
 		}
 		
 		int nod = 1;
 		for (int i = 0; prime[i] != 0; i++) {
+			
 			nod *= prime[i];
 		}
 		
@@ -191,6 +212,7 @@ public class Sorting08 {
 	public static void sortArray (int[] a) {
 		
 		if (a == null) {
+			
 			System.out.println("Bad parameter for sort.");
 			return;
 		}
