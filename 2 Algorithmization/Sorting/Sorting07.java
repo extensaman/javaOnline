@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.sorting;
 
 import java.util.Arrays;
 
@@ -23,6 +23,7 @@ public class Sorting07 {
 		int n; // dimension of array 'b'
 		do {
 			n = (int) (Math.random() * 5.0) + 2;
+			
 		} while (m == n);
 		
 		double[] a = new double[m]; 
@@ -30,10 +31,12 @@ public class Sorting07 {
 		
 		// Generate elements for arrays 'a' and 'b' (and they are not sorted)
 		for (int i = 0; i < m; i++) {
+			
 			a[i] = (Math.random() * 30.0) - 15.0;
 		}
 		
 		for(int i = 0 ; i < n; i++) {
+			
 			b[i] = (Math.random() * 30.0) - 15.0;
 		}
 		
@@ -56,7 +59,9 @@ public class Sorting07 {
 			for ( ; j < m; j++) { // iterate in 'a'-array
 				
 				if (b[i] < a[j]) {
+					
 					System.out.println("b[" + i + "] insert to " + j + " position of \'a\' array.");
+					
 					break; // take next 'b'-array element if insertion position was found
 				} 
 			}
@@ -71,13 +76,16 @@ public class Sorting07 {
 	public static void printArray (double[] mas) {
 		
 		if (mas == null) {
+			
 			System.out.println("Bad array reference.");
 			return;
 		}
 		
 		for (double i : mas) {
+			
 			System.out.printf("%+7.2f", i);
 		}
+		
 		System.out.println();
 	}
 }
