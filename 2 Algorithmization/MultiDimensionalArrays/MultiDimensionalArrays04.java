@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.multidimensionalarrays;
 
 /*
 * Этап "Алгоритмизация"
@@ -19,8 +19,10 @@ public class MultiDimensionalArrays04 {
 
 		// Generate array dimensions 
 		int m = 0;
+		
 		do {
 			m = (int) (Math.random() * 10.0) + 2;
+			
 		} while (m % 2 != 0);
 		
 		//Create an array
@@ -28,14 +30,18 @@ public class MultiDimensionalArrays04 {
 				
 		// Fill even rows
 		for (int i = 0; i < m; i += 2) {
+			
 			for (int j = 0; j < m; j++) {
+				
 				a[i][j] = j + 1;
 			}
 		}
 		
 		// Fill odd rows
 		for (int i = 1; i < m; i += 2) {
+			
 			for (int j = 0; j < m; j++) {
+				
 				a[i][j] = m - j;
 			}
 		}
@@ -47,14 +53,18 @@ public class MultiDimensionalArrays04 {
 	public static void printArray (int[][] mas) {
 		
 		if (mas == null) {
+			
 			System.out.println("Bad array reference.");
 			return;
 		}
 		
 		for (int i = 0; i < mas.length; i++) {
+			
 			for (int j = 0; j < mas[i].length; j++) {
+				
 				System.out.printf("%4d", mas[i][j]);
 			}
+			
 			System.out.println();
 		}
 	}
