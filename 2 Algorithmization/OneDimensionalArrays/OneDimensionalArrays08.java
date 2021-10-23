@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.onedimensionalarrays;
 
 import java.util.Scanner;
 
@@ -18,24 +18,26 @@ public class OneDimensionalArrays08 {
 		
 		Scanner sc = new Scanner (System.in);
 		
-		int n = 0; // Array size
-		
+		int n; // Array size
+		int[] a;
+			
 		// Enter a size of array 
 		System.out.println("Enter a size of array ( > 0 ): ");
 		if (sc.hasNextInt() && (n = sc.nextInt()) > 0) {
-			sc.close();
+			
+			a = new int[n];
+			
 		} else {
+			
 			System.out.println("You entered wrong data. Program finished.");
-			sc.close();
 			return;
 		}
-		
-		int[] a = new int[n];
 		
 		// Fill the array 'a' with integers from -5 to 5 and print it
 		System.out.println("The next is our array:");
 				
 		for (int i = 0; i < n; i++) {
+			
 			a[i] = (int) (Math.random() * 10.0) - 5;
 			System.out.printf("a[%d]=%d  ", i + 1, a[i]);
 		}
@@ -45,9 +47,11 @@ public class OneDimensionalArrays08 {
 		int minimalCount = 0;
 		
 		for (int element : a) {
+			
 			if (element == minimalElement) {
 				minimalCount++;
 			}
+			
 			if (element < minimalElement) {
 				minimalElement = element;
 				minimalCount = 1;
