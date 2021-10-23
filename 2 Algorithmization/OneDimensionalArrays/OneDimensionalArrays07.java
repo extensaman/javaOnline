@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.onedimensionalarrays;
 
 /*
 * Этап "Алгоритмизация"
@@ -20,6 +20,7 @@ public class OneDimensionalArrays07 {
 		System.out.println("The next is our array:");
 		
 		for (int i = 0; i < n; i++) {
+			
 			a[i] = Math.random() * 200.0 - 100.0;
 			System.out.printf("a[%d]=%.2f  ", i + 1, a[i]);
 		}
@@ -34,6 +35,7 @@ public class OneDimensionalArrays07 {
 		for (int i = 1, j = n - 2; i < middleIndex; i++, j--) {
 			
 			double tempSum = a[i] + a[j];
+			
 			if (tempSum > maximum) {
 				maximum = tempSum;
 				leftIndex = i;
