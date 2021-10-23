@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.onedimensionalarrays;
 
 /*
 * Этап "Алгоритмизация"
@@ -20,6 +20,7 @@ public class OneDimensionalArrays04 {
 		System.out.println("The next is our array:");
 		
 		for (int i = 0; i < n; i++) {
+			
 			a[i] = Math.random() * 200.0 - 100.0;
 			System.out.printf("a[%d]=%.2f  ", i, a[i]);
 		}
@@ -31,9 +32,13 @@ public class OneDimensionalArrays04 {
 		for (int i = 1; i < n; i++) {
 			
 			if (a[i] > a[indexMax]) {
+				
 				indexMax = i;
-			} else {
+			}
+			else {
+				
 				if (a[i] < a[indexMin]) {
+					
 					indexMin = i;
 				}
 			}
@@ -48,6 +53,7 @@ public class OneDimensionalArrays04 {
 		System.out.println("\nThe resulting array is:");
 		
 		for (int i = 0; i < n; i++) {
+			
 			System.out.printf("a[%d]=%.2f  ", i, a[i]);
 		}
 		
