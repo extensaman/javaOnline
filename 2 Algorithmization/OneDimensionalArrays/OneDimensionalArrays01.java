@@ -1,4 +1,4 @@
-﻿package by.home.algorithmization;
+﻿package by.home.algorithmization.onedimensionalarrays;
 
 /*
 * Этап "Алгоритмизация"
