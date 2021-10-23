@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.multidimensionalarrays;
 
 import java.util.Scanner;
 
@@ -24,7 +24,9 @@ public class MultiDimensionalArrays08 {
 
 		// Generate array elements
 		for (int i = 0; i < m; i++) {
+			
 			for (int j = 0; j < n; j++) {
+				
 				a[i][j] = (int) (Math.random() * 10.0) - 5;
 			}
 		}
@@ -34,14 +36,18 @@ public class MultiDimensionalArrays08 {
 		
 		// Enter a column #1 for swap
 		int k;
+		
 		do {
 			k = inputInt("\nEnter a column #1 for swap (1 <= # <= " + n + "):");
+			
 		} while (k < 1 || k > n);
 
 		// Enter a column #2 for swap
 		int p;
+		
 		do {
 			p = inputInt("Enter a column #2 for swap (1 <= # <= " + n + "):");
+			
 		} while (p < 1 || p > n);
 		
 		// Transform # to indexes
@@ -51,6 +57,7 @@ public class MultiDimensionalArrays08 {
 		// Swap columns' elements
 		int temp;
 		for (int i = 0; i < a.length; i++) {
+			
 			temp = a[i][k];
 			a[i][k] = a[i][p];
 			a[i][p] = temp;
@@ -64,14 +71,18 @@ public class MultiDimensionalArrays08 {
 	public static void printArray(int[][] mas) {
 
 		if (mas == null) {
+			
 			System.out.println("Bad array reference.");
 			return;
 		}
 
 		for (int i = 0; i < mas.length; i++) {
+			
 			for (int j = 0; j < mas[i].length; j++) {
+				
 				System.out.printf("%4d", mas[i][j]);
 			}
+			
 			System.out.println();
 		}
 	}
