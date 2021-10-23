@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.sorting;
 
 import java.util.Arrays;
 
@@ -37,12 +37,17 @@ public class Sorting03 {
 		
 		// DESC-sort array using "selection"-algorithm
 		for (int i = 0; i < n - 1; i++) {
+			
 			int indexOfMax = i;
+			
 			for (int j = i + 1; j < n; j++) {
+				
 				if (a[j] > a[indexOfMax]) {
+					
 					indexOfMax = j;
 				}
 			}
+			
 			int temp = a[i];
 			a[i] = a[indexOfMax];
 			a[indexOfMax] = temp;
@@ -56,6 +61,7 @@ public class Sorting03 {
 	public static void printArray(int[] a) {
 		
 		for (int element : a) {
+			
 			System.out.printf("%+4d", element);
 		}
 	}
