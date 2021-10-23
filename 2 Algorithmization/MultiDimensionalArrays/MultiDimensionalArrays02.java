@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.multidimensionalarrays;
 
 /*
 * Этап "Алгоритмизация"
@@ -20,7 +20,9 @@ public class MultiDimensionalArrays02 {
 		
 		// Generate array elements
 		for (int i = 0; i < m; i++) {
+			
 			for (int j = 0; j < m; j++) {
+				
 				a[i][j] = (int) (Math.random() * 10.0) - 5;
 			}
 		}
@@ -30,6 +32,7 @@ public class MultiDimensionalArrays02 {
 		// Print diagonal elements  
 		System.out.println("\nDiagonal elements are ");
 		for (int i = 0; i < a.length; i++) {
+			
 			System.out.printf("%4d", a[i][i]);
 		}
 
@@ -38,14 +41,18 @@ public class MultiDimensionalArrays02 {
 	public static void printArray (int[][] mas) {
 		
 		if (mas == null) {
+			
 			System.out.println("Bad array reference.");
 			return;
 		}
 		
 		for (int i = 0; i < mas.length; i++) {
+			
 			for (int j = 0; j < mas[i].length; j++) {
+				
 				System.out.printf("%4d", mas[i][j]);
 			}
+			
 			System.out.println();
 		}
 	}
