@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.onedimensionalarrays;
 
 /*
 * Этап "Алгоритмизация"
@@ -41,6 +41,7 @@ public class OneDimensionalArrays02 {
 	}
 	
 	public static void printArray(double[] mas) {
+		
 		for (int i = 0; i < mas.length; i++) {
 			System.out.printf("a[%d]=%.2f\n", i, mas[i]);
 		}
