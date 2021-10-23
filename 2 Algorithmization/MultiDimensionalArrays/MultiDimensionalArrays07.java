@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.multidimensionalarrays;
 
 /*
 * Этап "Алгоритмизация"
@@ -24,6 +24,7 @@ public class MultiDimensionalArrays07 {
 		
 		// Fill the array
 		for (int i = 0; i < a.length; i++) {
+			
 			for (int j = 0; j < a[i].length; j++) {
 				
 				a[i][j] = Math.sin	( 
@@ -31,8 +32,10 @@ public class MultiDimensionalArrays07 {
 									Math.pow(i + 1, 2.0) - Math.pow(j + 1, 2.0) 
 								) / m 
 							);
+				
 				// Count amount of positive elements
 				if (a[i][j] > 0.0) {
+					
 					counter++;
 				}
 			}
@@ -40,21 +43,27 @@ public class MultiDimensionalArrays07 {
 		
 		// Print results
 		System.out.println("Array " + m + 'x' + m + " is"); 
+		
 		printArray(a);
+		
 		System.out.println("\nAmount of positive elements is " + counter);
 	}
 	
 	public static void printArray (double[][] mas) {
 		
 		if (mas == null) {
+			
 			System.out.println("Bad array reference.");
 			return;
 		}
 		
 		for (int i = 0; i < mas.length; i++) {
+			
 			for (int j = 0; j < mas[i].length; j++) {
+				
 				System.out.printf("%+.4f   ", mas[i][j]);
 			}
+			
 			System.out.println();
 		}
 	}
