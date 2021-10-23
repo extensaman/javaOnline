@@ -1,4 +1,4 @@
-package by.home.algorithmization;
+package by.home.algorithmization.onedimensionalarrays;
 
 /*
 * Этап "Алгоритмизация"
@@ -21,6 +21,7 @@ public class OneDimensionalArrays06 {
 		System.out.println("The next is our array:");
 		
 		for (int i = 0; i < n; i++) {
+			
 			a[i] = Math.random() * 200.0 - 100.0;
 			System.out.printf("a[%d]=%.2f  ", i + 1, a[i]);
 		}
@@ -32,8 +33,10 @@ public class OneDimensionalArrays06 {
 		for (int i = 0; i < n; i++) {
 			
 			if (isPrimeNumber(i + 1)) {
+				
 				System.out.printf("a[%d]=%.2f  ", i + 1, a[i]);
 				sum += a[i];
+			
 			} else {
 				System.out.printf("          ");
 			}
@@ -55,6 +58,7 @@ public class OneDimensionalArrays06 {
 		}
 
 		for (int i = 2; i <= num / 2; i++) {
+			
 			if (num % i == 0) {
 				return false;
 			}
