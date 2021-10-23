@@ -1,4 +1,4 @@
-package by.home.algorithmization.multidimensionalarrays;
+package by.home.algorithmization.multidimensionalarray;
 
 import java.util.Scanner;
 
