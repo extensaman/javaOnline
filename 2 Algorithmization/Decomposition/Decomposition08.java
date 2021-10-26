@@ -18,27 +18,22 @@ public class Decomposition08 {
 		
 		n = (int) (Math.random() * 12.0) + 3; // Генерируем размер массива от 3 до 14
 		
-		int[] d = createRandomArray(n, 10);
+		int[] d = createRandomArray(n, 10); // 
 		
 		printArray("Array \'D\':", d);
 		
-		// FEATURE: надо сделать метод int[] createRangeForThreeElememnt (int size) который возвращает массив из 2-х элементов 
+		int[] range = createRangeForThreeElememnt (n); 
 		
-		int k;
+		int result = sumThreeSequential (d, range);
 		
-		k = inputIntInRange("\nEnter \'k\':", 1, n);
-		
-		int m;
-		
-		m = inputIntInRange("Enter \'m\':", k, n);
-		
-		Result result = sumThreeSequential (d, k, m);
-		
-		System.out.println(result);
+		System.out.println("Sum of elements between " + range[0] + " and " + range[1] + " = " + result);
 		
 
 	}
 
+	///////////////////////////////////////////////////////////
+	// Создает массив размером 'size' и заполняет его случайными целыми числами от -limit до +limit 
+	
 	public static int[] createRandomArray (int size, int limit) {
 		
 		int[] mas = new int[size];
@@ -50,6 +45,9 @@ public class Decomposition08 {
 		
 		return mas;
 	}
+	
+	///////////////////////////////////////////////////////////
+	// Выводит в консоль сообщение 'message' и печатает номера элементов и сами элементы массива 'mas'
 	
 	public static void printArray (String message, int[] mas) {
 		
@@ -70,6 +68,44 @@ public class Decomposition08 {
 		}
 	}
 	
+	///////////////////////////////////////////////////////////
+	// Возвращает массив из 2-х элементов, содержащего номера начального и конечного элемента 
+	// для выборки 3-х элементов из массива размером size
+	
+	public static int[] createRangeForThreeElememnt (int size) {
+		
+		int k;
+		int m;
+
+		while (true) {
+
+			k = inputIntInRange("\nEnter \'k\':", 1, size);
+
+			m = inputIntInRange("Enter \'m\':", k, size);
+			
+			if (m - k < 2) {
+				
+				System.out.println("Range between " + k + " and " + m + " is too small. Try again");
+				
+			} else {
+				
+				if (m - k > 2) {
+					
+					System.out.println("Range between " + k + " and " + m + " is too big. Try again");
+					
+				} else {
+					
+					break;
+				}
+			}
+		}
+		
+		return new int[] {k, m};
+	}
+	
+///////////////////////////////////////////////////////////
+// Возвращает целое положительное число в диапазоне min <= .. <= max, введенное с клавиатуры
+	
 	public static int inputIntInRange (String message, int min, int max) {
 		@SuppressWarnings ("resource")
 		Scanner sc = new Scanner (System.in);
@@ -88,47 +124,18 @@ public class Decomposition08 {
 		
 	}
 	
-	public static Result sumThreeSequential (int[] d, int k, int m) {
+	///////////////////////////////////////////////////////////
+	// Возвращает целое положительное число равное сумме трех элементов массива 'd' с номерами от range[0] до range[1]
+	
+	public static int sumThreeSequential (int[] d, int[] range) {
 		
-		if (m - k != 2) {
-			
-			return new Result (0, false, "(" + k + ", " + m + ") is bad range. Try again.");
-			
-		} else {
-			
 			int sum = 0;
 			
-			for (int i = k - 1; i < m; i++) {
+			for (int i = range[0] - 1; i < range[1]; i++) {
 				sum += d[i];
 			}
 			
-			return new Result (sum, true, "Sum of elements between " + k + " and " + m + " = ");
-		}
-	}
-}
+			return sum;
 
-class Result {
-	
-	private int sum;
-	private boolean allRight;
-	private String message;
-	
-	Result (int sum, boolean allRight, String message) {
-		
-		this.sum = sum;
-		this.allRight = allRight;
-		this.message = message;
-		
-	}
-	
-	@Override
-	public String toString() {
-		
-		if (allRight) {
-			
-			return message + sum;
-		}
-		
-		return message; 
 	}
 }
