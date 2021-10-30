@@ -22,31 +22,17 @@ public class Decomposition16 {
 
 		int n;
 		n = inputIntInRange("Enter n:", 1, 19); // В 'long' максимум 19 цифр
-
-		long low;
-		low = (long) Math.pow (10.0, n - 1);
 		
-		long high;
-		if (n == 19) {
-			
-			high = Long.MAX_VALUE;
-			
-		} else {
-			
-			high = (long) Math.pow(10.0, n) - 1L;
-		}
-
-		long sum = 0L;
+		long sum;
+		sum = calculateSum(n);
 		
-		for (long i = low; i <= high; i++) {
-			
-			if (CountDigitInNumber(i, SearchType.ODD) == n) {
-				
-				sum += i;
-				
-				System.out.println(i);
-			}
-		}
+		System.out.printf("%s %,d", "Sum is ", sum);
+		
+		int evenDigitCount;
+		evenDigitCount = CountDigitInNumber (sum, SearchType.EVEN);
+		
+		System.out.print("\nCount of even digits in \'sum\' is " + evenDigitCount);
+
 	}
 
 	///////////////////////////////////////////////////////////
@@ -68,6 +54,36 @@ public class Decomposition16 {
 		}
 		
 		return m;
+	}
+	
+	public static long calculateSum (int n) {
+		
+		long low;
+		low = (long) Math.pow (10.0, n - 1);
+		
+		long high;
+		if (n == 19) {
+			
+			high = Long.MAX_VALUE;
+			
+		} else {
+			
+			high = (long) Math.pow(10.0, n) - 1L;
+		}
+
+		long sum = 0L;
+		
+		for (long i = low; i <= high; i++) {
+			
+			if (CountDigitInNumber(i, SearchType.ODD) == n) {
+				
+				sum += i;
+				
+				System.out.printf("%,d\n", i);
+			}
+		}
+		
+		return sum;
 	}
 	
 	public static int CountDigitInNumber (long n, SearchType type) {
@@ -105,4 +121,5 @@ public class Decomposition16 {
 		return true;
 	}
 }
+
 
