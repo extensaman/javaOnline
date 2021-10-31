@@ -3,11 +3,11 @@ package by.home.string.asarray;
 import java.util.Scanner;
 
 /*
-* Этап "Strings and basics of of text processing"
-* Раздел "Работа со строкой как с массивом символов".
-* Задача №01.
-* Дан массив названий переменных в camelCase. 
-* Преобразовать названия в snake_case.
+* Р­С‚Р°Рї "Strings and basics of of text processing"
+* Р Р°Р·РґРµР» "Р Р°Р±РѕС‚Р° СЃРѕ СЃС‚СЂРѕРєРѕР№ РєР°Рє СЃ РјР°СЃСЃРёРІРѕРј СЃРёРјРІРѕР»РѕРІ".
+* Р—Р°РґР°С‡Р° в„–01.
+* Р”Р°РЅ РјР°СЃСЃРёРІ РЅР°Р·РІР°РЅРёР№ РїРµСЂРµРјРµРЅРЅС‹С… РІ camelCase. 
+* РџСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РЅР°Р·РІР°РЅРёСЏ РІ snake_case.
 */
 
 public class AsArray01 {
@@ -16,7 +16,7 @@ public class AsArray01 {
 			"helloWorld",
 			"helloworld",
 			"mjsdkfskjdflskflksdf;ksd;flksd'fks'lfks'dfksd'flksdlfksdflksdlfks'dkff2304=-934028949283",
-			"лдьацдлаоцушц2104-9кшолоп2-30940-  шк32ш40 023940   324 -0324 шукщклвла",
+			"Г«Г¤ГјГ Г¶Г¤Г«Г Г®Г¶ГіГёГ¶2104-9ГЄГёГ®Г«Г®ГЇ2-30940-  ГёГЄ32Гё40 023940   324 -0324 ГёГіГЄГ№ГЄГ«ГўГ«Г ",
 			"varCamel",
 			"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeRrrrrrrrrrrrrrrrrrrrrrrrrrr"
 };
@@ -53,7 +53,7 @@ public class AsArray01 {
 	}
 
 	///////////////////////////////////////////////////////////
-	// Печатает в консоль сообщение 'message' и массив 'a'
+	// РџРµС‡Р°С‚Р°РµС‚ РІ РєРѕРЅСЃРѕР»СЊ СЃРѕРѕР±С‰РµРЅРёРµ 'message' Рё РјР°СЃСЃРёРІ 'a'
 	
 	public static void printArray (String message, String[] a) {
 
