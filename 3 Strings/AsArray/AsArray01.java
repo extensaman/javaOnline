@@ -1,7 +1,5 @@
 package by.home.string.asarray;
 
-import java.util.Scanner;
-
 /*
 * Этап "Strings and basics of of text processing"
 * Раздел "Работа со строкой как с массивом символов".
@@ -16,9 +14,11 @@ public class AsArray01 {
 			"helloWorld",
 			"helloworld",
 			"mjsdkfskjdflskflksdf;ksd;flksd'fks'lfks'dfksd'flksdlfksdflksdlfks'dkff2304=-934028949283",
-			"ëäüàöäëàîöóøö2104-9êøîëîï2-30940-  øê32ø40 023940   324 -0324 øóêùêëâëà",
-			"varCamel",
-			"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeRrrrrrrrrrrrrrrrrrrrrrrrrrr"
+			"апажпоалдпоапо оывплоыапоыждпо ЛЖДЛПвып ЛЖДЛФВУпа ФЭВАЛ эфВЭАл эФВаэfskdf;lk;PLK",
+			"varCamelSda",
+			"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeRrrrrrrrrrrrrrrrrrrrrrrrrrr",
+			"HHHHbbbJJJJJ",
+			"dY"
 };
 	
 	public static void main(String[] args) {
@@ -26,26 +26,34 @@ public class AsArray01 {
 		for (int i = 0; i < strArray.length; i++) {
 			
 			char[] camel = strArray[i].toCharArray();
-			char[] snake = new char[camel.length + 1];
+			
+			int snakeSize = calculateSnakeSize(strArray[i]);
+			
+			char[] snake = new char[snakeSize];
+			
 			int index = 0;
 			
-			for (int j = 0; j < camel.length; j++) {
+			int j;
+			for (j = 1; j < camel.length; j++) {
 				
-				char ch = camel[j];
-				
-				if (Character.isUpperCase(ch)) {
+				snake[index++] = camel[j - 1];
+
+				if (Character.isLowerCase(camel[j - 1]) && Character.isUpperCase(camel[j])) {
 					
 					snake[index++] = '_';
-					snake[index++] = Character.toLowerCase(ch);
-										
-				} else {
+					snake[index++] = Character.toLowerCase(camel[j]);
+					j++;
 					
-					snake[index++] = ch;
-					
-				}
+				} 
 			}
 			
-			strArray[i] = String.copyValueOf(snake);
+			if (j <= camel.length) {
+				
+				snake[index] = camel[j - 1];
+
+			}
+			
+			strArray[i] = new String(snake);
 		}
 		
 		printArray ("Variables in \'snake_case\' are", strArray);
@@ -70,5 +78,23 @@ public class AsArray01 {
 			System.out.printf("%s\n", a[i]);
 			
 		}
+	}
+	
+	///////////////////////////////////////////////////////////
+	// Вычисляет размер имени переменной snake_case
+	
+	public static int calculateSnakeSize (String camel) {
+		
+		int counter = 0;
+		
+		for (int i = 0; i < camel.length() - 1; i++) {
+			
+			if (Character.isLowerCase(camel.charAt(i)) && Character.isUpperCase(camel.charAt(i + 1))) {
+				
+				counter++;
+			}
+		}
+		
+		return camel.length() + counter;
 	}
 }
