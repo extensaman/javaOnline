@@ -1,5 +1,16 @@
 package by.home.programmingclass.simple03;
 
+/**
+* Этап "Programming with classes"
+* Раздел "Простейшие классы и объекты".
+* Задача №03.
+* 
+* Вспомогательный класс для осуществления выборок студентов
+* 
+* @author extensaman
+* @version 1.0
+*/
+
 public class StudentSample {
 
 	public static final int SAMPLE_COUNT_LIMIT = 10;
