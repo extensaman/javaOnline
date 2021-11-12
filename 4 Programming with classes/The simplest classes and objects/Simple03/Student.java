@@ -48,7 +48,7 @@ public class Student {
 	@Override
 	public String toString () {
 		
-		return "Student: " + surnameNamePatronymic + "\nGroup number: " + groupNumber + "\nAcademic performance: " + Arrays.toString(academicPerformance) + '\n';
+		return "Student: " + this.surnameNamePatronymic + "\nGroup number: " + this.groupNumber + "\nAcademic performance: " + Arrays.toString(this.academicPerformance) + '\n';
 	}
 
 }
